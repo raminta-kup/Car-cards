@@ -6,6 +6,7 @@ body {
 .content-wrapper {
     margin: 0 auto;
     width: 80%;
+    padding-bottom: 40px;
 }
 
 .form-wrapper {

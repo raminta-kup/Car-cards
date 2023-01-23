@@ -1,27 +1,7 @@
 // Sukurkite HTML formą, kurioje vartotojas galės įrašyti (į input laukelius): car brand, model, mileage, price ir image (url laukelis). Per konstruktorių, sukuriams objektas ir jis atvaizduojamas po forma (CSS rašykite CSS'e) Paspaudus ant automobilio nuotraukos- turi alert išmesti kainą.
 
-const carOutput = document.getElementById("car-output");
-const uList = document.createElement("ul");
-const img = document.createElement("img");
-const liBrand = document.createElement("li");
-const liPrice = document.createElement("li");
-const liModel = document.createElement("li");
-const liMileage = document.createElement("li");
-const listDiv = document.createElement("div");
-const carCardContainer = document.createElement("div");
-const removeBtnContainer = document.createElement("div");
+
 const btn = document.getElementById("car-btn");
-const removeBtn = document.createElement("button");
-
-carCardContainer.classList.add("card-container");
-listDiv.classList.add("list-container");
-liBrand.classList.add("brand-li");
-liModel.classList.add("model-li");
-liMileage.classList.add("mileage-li");
-liPrice.classList.add("price-li");
-removeBtnContainer.classList.add("remove-container");
-
-
 
 class Car {
     constructor(brand, model, mileage, price, url) {
@@ -32,6 +12,25 @@ class Car {
         this.url = url;
     }
     showCar() {
+        const carOutput = document.getElementById("car-output");
+        const uList = document.createElement("ul");
+        const img = document.createElement("img");
+        const liBrand = document.createElement("li");
+        const liPrice = document.createElement("li");
+        const liModel = document.createElement("li");
+        const liMileage = document.createElement("li");
+        const listDiv = document.createElement("div");
+        const carCardContainer = document.createElement("div");
+        const removeBtnContainer = document.createElement("div");
+        const removeBtn = document.createElement("button");
+
+        carCardContainer.classList.add("card-container");
+        listDiv.classList.add("list-container");
+        liBrand.classList.add("brand-li");
+        liModel.classList.add("model-li");
+        liMileage.classList.add("mileage-li");
+        liPrice.classList.add("price-li");
+        removeBtnContainer.classList.add("remove-container");
 
         const mileageWithComa = this.mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         const priceWithComa = this.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -43,6 +42,7 @@ class Car {
         removeBtnContainer.appendChild(removeBtn)
         listDiv.append(uList);
         uList.append(liBrand, liPrice, liModel, liMileage);
+        
         removeBtn.textContent = "Remove";
         liBrand.textContent = `${this.brand}`;
         liPrice.textContent = `${priceWithComa}€`;
@@ -52,15 +52,12 @@ class Car {
 
         removeBtn.addEventListener("click", e => {
             e.preventDefault();
-            carCardContainer.remove()
-        })
+            carCardContainer.remove();
+        });
         img.addEventListener("click", () => {
             alert(`This car costs ${priceWithComa}€`)
-        })
-
-        
+        });
     }
-
 
 }
 
@@ -86,8 +83,6 @@ function submitForm(e) {
     } else {
         alert("Not enough data")
     }
-
-    // removeBtn.addEventListener("click", removeCar)
 
 }
 
