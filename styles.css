@@ -81,13 +81,13 @@ img {
     display: flex;
     flex-direction: column;
     gap: 0;
-    background-color: white;
     border-radius: 4px 4px 0 0;
 }
 
 .list-container {
+    background-color: white;
     padding: 24px 0;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     gap: 24px;
@@ -95,6 +95,7 @@ img {
 }
 
 ul {
+    width: 80%;
     gap: 16px;
     display: grid;
     grid-template-areas:
@@ -102,6 +103,7 @@ ul {
         "model mileage";
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
 }
 
 ul li {
@@ -144,13 +146,13 @@ ul li {
 
 .remove-container {
     display: flex;
-    justify-content: center;
     padding-top: 24px;
     border-top: 1px solid rgba(184, 183, 183, 0.637);
     border-radius: 2px;
 }
 
 .remove-container button {
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
     background-color: rgba(197, 58, 58, 0.904);
 }
