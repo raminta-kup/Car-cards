@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Quicksand:wght@400;500;600;700&family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div class="form-wrapper">
+            <form id="car-form">
+
+                <!-- <label for="brand">Brand</label> -->
+                <input class="data" type="text" id="brand" name="brand" placeholder="BRAND">
+
+                <!-- <label for="model">Model</label> -->
+                <input class="data" type="text" id="model" name="model" placeholder="MODEL">
+
+                <!-- <label for="mileage">Mileage</label> -->
+                <input class="data" type="number" min="1" id="mileage" name="mileage" placeholder="MILEAGE">
+
+                <!-- <label for="price">Price</label> -->
+                <input class="data" type="number" min="1" id="price" name="price" placeholder="PRICE">
+
+                <!-- <label for="img-url">Image url</label> -->
+                <input class="data" type="url" id="img-url" name="img-url" placeholder="IMAGE URL">
+
+                <button type="submit" id="car-btn">Submit</button>
+            </form>
+        </div>
+        <div id="car-output"></div>
+
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
