@@ -68,6 +68,7 @@ button {
 
 img {
     border-radius: 4px 4px 0 0;
+    object-fit: cover;
 }
 
 #car-output {
@@ -155,4 +156,11 @@ ul li {
     margin: 0 auto;
     width: 80%;
     background-color: rgba(197, 58, 58, 0.904);
+}
+
+.error-span {
+    color: rgba(197, 58, 58, 0.904);
+    font-size: 14px;
+    /* border-bottom: 1px solid rgba(197, 58, 58, 0.904); */
+    padding-bottom: 6px;
 }

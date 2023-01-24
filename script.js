@@ -42,7 +42,7 @@ class Car {
         removeBtnContainer.appendChild(removeBtn)
         listDiv.append(uList);
         uList.append(liBrand, liPrice, liModel, liMileage);
-        
+
         removeBtn.textContent = "Remove";
         liBrand.textContent = `${this.brand}`;
         liPrice.textContent = `${priceWithComa}€`;
@@ -71,17 +71,29 @@ function submitForm(e) {
     const mileage = document.getElementById("mileage").value;
     const price = document.getElementById("price").value;
     const url = document.getElementById("img-url").value;
+    const errorSpan = document.createElement("span");
+    errorSpan.classList.add("error-span")
+    
 
-    if (mileage < 0) {
-        alert("Invalid mileage")
-    } else if (price < 0) {
-        alert("invalid price")
-    } else if (brand && model && mileage && price && url) {
+    if (mileage < 0 && price < 0) {
+        errorSpan.textContent = "* Invalid mileage and price";
+        carForm.append(errorSpan);
+        // alert("Invalid mileage")
+    } else if (mileage < 0) {
+        errorSpan.textContent = "* Invalid mileage";
+        carForm.append(errorSpan);
+        // alert("invalid price")
+    } else if(price < 0) {
+        carForm.append(errorSpan);
+        errorSpan.textContent = "* Invalid price";
+
+    }else if (brand && model && mileage && price && url) {
         const car = new Car(brand, model, mileage, price, url);
         car.showCar();
         carForm.reset();
     } else {
-        alert("Not enough data")
+        carForm.append(errorSpan);
+        errorSpan.textContent = "* Not enough data";
     }
 
 }
